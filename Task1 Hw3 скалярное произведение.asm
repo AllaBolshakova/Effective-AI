@@ -1,0 +1,25 @@
+	JMP start
+vec_a: DB 2.0_o3, 3.0_o3, 1.5_o3
+vec_b: DB 1.75_o3, 1.0_o3, 2.5_o3
+acc:   DB 0.0_o3
+
+start:
+    MOV A, vec_a
+    MOV B, vec_b
+    MOV C, 3
+    MOV D, acc
+
+.loop:
+	FMOV.O3 FQA, [A]
+    FMOV.O3 FQB, [B]
+    FMUL.O3 FQB, FQA
+    FADD.O3 FQC, FQB
+    DEC C
+    INC B
+    INC A
+    cmp C, 0
+    JNZ .loop
+
+FMOV.O3 [acc], FQC
+    
+HLT
