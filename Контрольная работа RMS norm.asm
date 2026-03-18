@@ -1,4 +1,5 @@
-	JMP start
+;Работа выполнялась по формуле из файла RMS_norm.png
+JMP start
 x: DB 2.0_h, 3.0_h, 1.5_h
 gamma: DB 0.75_h, 0.1_h, 0.5_h
 epsilon: DB 0.1_h
