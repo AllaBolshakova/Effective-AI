@@ -8,5 +8,4 @@ start:
       VSET VA, {data}, data
       VADD.U VC, VA
       mov A, [0]
-      vmin.U VA
     HLT
